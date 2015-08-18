@@ -8,7 +8,7 @@
     <OutputType>library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Grabacr07.ExpeditionWindow</RootNamespace>
-    <AssemblyName>ExpeditionWindow</AssemblyName>
+    <AssemblyName>ExPlugin.ExpeditionWindow</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -45,8 +45,8 @@
       <HintPath>..\packages\KanColleViewer.PluginAnalyzer.1.0.1.0\lib\net45\KanColleViewer.PluginAnalyzer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="KanColleWrapper, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\KanColleWrapper.1.2.1.0\lib\net45\KanColleWrapper.dll</HintPath>
+    <Reference Include="KanColleWrapper, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\KanColleWrapper.1.2.2.0\lib\net45\KanColleWrapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Livet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b0b1d3f711ef38cb, processorArchitecture=MSIL">
@@ -73,8 +73,8 @@
       <HintPath>..\packages\MetroTrilithon.0.1.0.0\lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10\MetroTrilithon.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MetroTrilithon.Desktop, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroTrilithon.Desktop.0.1.0.0\lib\net45\MetroTrilithon.Desktop.dll</HintPath>
+    <Reference Include="MetroTrilithon.Desktop, Version=0.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroTrilithon.Desktop.0.1.2.0\lib\net45\MetroTrilithon.Desktop.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Expression.Drawing, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -134,16 +134,28 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\MainWindowSettings.cs" />
+    <Compile Include="Models\Providers.cs" />
     <Compile Include="NotifyAttribute.cs" />
+    <Compile Include="ViewModels\ExpeditionState.cs" />
+    <Compile Include="ViewModels\ExpeditionViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\ToolViewViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ToolView.xaml.cs">
+      <DependentUpon>ToolView.xaml</DependentUpon>
     </Compile>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ToolView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

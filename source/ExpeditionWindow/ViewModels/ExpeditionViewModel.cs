@@ -10,9 +10,11 @@ namespace Grabacr07.ExpeditionWindow.ViewModels
 {
 	public class ExpeditionViewModel : IDisposableHolder, INotifyPropertyChanged
 	{
-		private readonly MainWindowViewModel owner;
-		private readonly Expedition source;
 		private readonly CompositeDisposable compositeDisposable = new CompositeDisposable();
+
+		public Expedition Source { get; }
+
+		public int Id { get; }
 
 		[Notify]
 		public ExpeditionState State
@@ -35,43 +37,40 @@ namespace Grabacr07.ExpeditionWindow.ViewModels
 			set { this.SetProperty(ref this.remaining, value, remainingPropertyChangedEventArgs); }
 		}
 
-		public ExpeditionViewModel(MainWindowViewModel owner, Expedition expedition)
+		public ExpeditionViewModel(int id, Expedition expedition)
 		{
-			this.owner = owner;
-			this.source = expedition;
-			this.source.Subscribe(nameof(Expedition.Remaining), this.HandleUpdateRemaining).AddTo(this);
-			this.source.Subscribe(nameof(Expedition.ReturnTime), this.HandleUpdateReturnTime).AddTo(this);
+			this.Id = id;
+			this.Source = expedition;
+			this.Source.Subscribe(nameof(Expedition.Remaining), this.HandleUpdateRemaining).AddTo(this);
+			this.Source.Subscribe(nameof(Expedition.ReturnTime), this.HandleUpdateReturnTime).AddTo(this);
 		}
 
 
 		private void HandleUpdateRemaining()
 		{
-			this.Remaining = this.source.Remaining.HasValue
-				? $"{(int)this.source.Remaining.Value.TotalHours:D2}:{this.source.Remaining.Value.ToString(@"mm\:ss")}"
+			this.Remaining = this.Source.Remaining.HasValue
+				? $"{(int)this.Source.Remaining.Value.TotalHours:D2}:{this.Source.Remaining.Value.ToString(@"mm\:ss")}"
 				: "--:--:--";
 			this.UpdateState();
 		}
 
 		private void HandleUpdateReturnTime()
 		{
-			this.ReturnTime = this.source.ReturnTime?.LocalDateTime.ToString("MM/dd HH:mm") ?? "--/-- --:--";
+			this.ReturnTime = this.Source.ReturnTime?.LocalDateTime.ToString("MM/dd HH:mm") ?? "--/-- --:--";
 			this.UpdateState();
 		}
 
 		private void UpdateState()
 		{
-			this.State = this.source.IsInExecution
-				? ExpeditionState.Watinig
-				: this.source.Remaining?.TotalSeconds > 0
+			this.State = this.Source.IsInExecution
+				? this.Source.Remaining?.TotalSeconds > 0
 					? ExpeditionState.InExecution
-					: ExpeditionState.Returned;
+					: ExpeditionState.Returned
+				: ExpeditionState.Watinig;
 		}
 
-		public void Dispose()
-		{
-			this.compositeDisposable.Dispose();
-		}
 
+		void IDisposable.Dispose() => this.compositeDisposable.Dispose();
 		ICollection<IDisposable> IDisposableHolder.CompositeDisposable => this.compositeDisposable;
 
 		#region NotifyPropertyChangedGenerator

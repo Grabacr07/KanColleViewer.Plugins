@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Grabacr07.ExpeditionWindow.Views.ToolView"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:livet="http://schemas.livet-mvvm.net/2011/wpf"
+			 xmlns:mtct="http://schemes.grabacr.net/winfx/2015/personal/controls"
+			 xmlns:mtiv="http://schemes.grabacr.net/winfx/2015/personal/interactivity"
+			 xmlns:local="clr-namespace:Grabacr07.ExpeditionWindow.Views"
+			 xmlns:viewModels="clr-namespace:Grabacr07.ExpeditionWindow.ViewModels"
+			 mc:Ignorable="d"
+			 d:DataContext="{d:DesignInstance viewModels:ToolViewViewModel}"
+			 d:DesignWidth="300"
+			 d:DesignHeight="300">
+	<i:Interaction.Triggers>
+		<livet:InteractionMessageTrigger Messenger="{Binding Messenger}"
+										 MessageKey="MainWindow.Show">
+			<livet:TransitionInteractionMessageAction WindowType="{x:Type local:MainWindow}"
+													  Mode="Normal"
+													  IsOwned="False"
+													  InvokeActionOnlyWhenWindowIsActive="False" />
+		</livet:InteractionMessageTrigger>
+	</i:Interaction.Triggers>
+
+	<Grid HorizontalAlignment="Left"
+		  VerticalAlignment="Top">
+		<mtct:CallMethodButton Content="Show"
+							   MethodTarget="{Binding}"
+							   MethodName="ShowWindow"
+							   Padding="32,16"
+							   Margin="16,0" />
+	</Grid>
+</UserControl>

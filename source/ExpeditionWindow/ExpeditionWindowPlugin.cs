@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using Grabacr07.ExpeditionWindow.ViewModels;
+using Grabacr07.ExpeditionWindow.Views;
 using Grabacr07.KanColleViewer.Composition;
 
 namespace Grabacr07.ExpeditionWindow
@@ -17,18 +18,12 @@ namespace Grabacr07.ExpeditionWindow
     [ExportMetadata("Author", "@Grabacr07")]
     public class ExpeditionWindowPlugin : IPlugin, ITool
     {
-        public void Initialize()
-        {
-        }
+        private ToolViewViewModel viewModel;
 
-        string ITool.Name
-        {
-            get { throw new NotImplementedException(); }
-        }
+        public void Initialize() { }
 
-        object ITool.View
-        {
-            get { throw new NotImplementedException(); }
-        }
+        string ITool.Name => "Expedition";
+
+        object ITool.View => new ToolView { DataContext = this.viewModel ?? (this.viewModel = new ToolViewViewModel()), };
     }
 }

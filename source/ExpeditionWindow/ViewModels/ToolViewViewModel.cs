@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Livet;
 using Livet.Messaging;
 
-namespace Grabacr07.ExpeditionWindow.ViewModels
+namespace Grabacr07.KanColleViewer.Plugins.ExpeditionMonitor.ViewModels
 {
     public class ToolViewViewModel : ViewModel
     {

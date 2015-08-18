@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using MetroTrilithon.Serialization;
 
-namespace Grabacr07.ExpeditionWindow.Models
+namespace Grabacr07.KanColleViewer.Plugins.ExpeditionMonitor.Models
 {
 	public static class Providers
 	{

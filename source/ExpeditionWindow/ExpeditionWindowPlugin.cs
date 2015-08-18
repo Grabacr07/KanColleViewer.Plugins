@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
 using System.Threading.Tasks;
-using Grabacr07.ExpeditionWindow.ViewModels;
-using Grabacr07.ExpeditionWindow.Views;
 using Grabacr07.KanColleViewer.Composition;
+using Grabacr07.KanColleViewer.Plugins.ExpeditionMonitor.ViewModels;
+using Grabacr07.KanColleViewer.Plugins.ExpeditionMonitor.Views;
 
-namespace Grabacr07.ExpeditionWindow
+namespace Grabacr07.KanColleViewer.Plugins.ExpeditionMonitor
 {
     [Export(typeof(IPlugin))]
     [Export(typeof(ITool))]

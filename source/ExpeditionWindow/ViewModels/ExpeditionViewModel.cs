@@ -6,7 +6,7 @@ using MetroTrilithon.Lifetime;
 using MetroTrilithon.Mvvm;
 using StatefulModel;
 
-namespace Grabacr07.ExpeditionWindow.ViewModels
+namespace Grabacr07.KanColleViewer.Plugins.ExpeditionMonitor.ViewModels
 {
 	public class ExpeditionViewModel : IDisposableHolder, INotifyPropertyChanged
 	{

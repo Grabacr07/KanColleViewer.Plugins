@@ -13,16 +13,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Grabacr07.ExpeditionWindow.Views
+namespace Grabacr07.KanColleViewer.Plugins.ExpeditionMonitor.Views
 {
-    /// <summary>
-    /// ToolView.xaml の相互作用ロジック
-    /// </summary>
-    public partial class ToolView : UserControl
+    partial class ToolView
     {
         public ToolView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

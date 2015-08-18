@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using MetroTrilithon.Serialization;
 
-namespace Grabacr07.ExpeditionWindow.Models
+namespace Grabacr07.KanColleViewer.Plugins.ExpeditionMonitor.Models
 {
 	public static class MainWindowSettings
 	{

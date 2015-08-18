@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Grabacr07.ExpeditionWindow.Models
+namespace Grabacr07.KanColleViewer.Plugins.ExpeditionMonitor.Models
 {
 	internal static class Extensions
 	{

@@ -1,5 +1,5 @@
 
-namespace Grabacr07.ExpeditionWindow.ViewModels
+namespace Grabacr07.KanColleViewer.Plugins.ExpeditionMonitor.ViewModels
 {
 	public enum ExpeditionState
 	{

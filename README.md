@@ -1,5 +1,5 @@
-## ExpeditionWindow
-KanColleViewer プラグイン。遠征出し忘れが激しいので、専用ウィンドウ作った。
+## ExpeditionMonitor
+遠征出し忘れが激しいので、専用ウィンドウ作った。
 
 ![MainWindow](https://cloud.githubusercontent.com/assets/1779073/9337483/8ef9b3ae-461a-11e5-8769-e520846daac0.png)
 

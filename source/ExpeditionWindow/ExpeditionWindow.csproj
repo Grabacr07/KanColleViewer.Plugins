@@ -7,7 +7,7 @@
     <ProjectGuid>{CBFF322A-254D-435D-B590-3E445D6531D6}</ProjectGuid>
     <OutputType>library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Grabacr07.ExpeditionWindow</RootNamespace>
+    <RootNamespace>Grabacr07.KanColleViewer.Plugins.ExpeditionMonitor</RootNamespace>
     <AssemblyName>ExPlugin.ExpeditionWindow</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

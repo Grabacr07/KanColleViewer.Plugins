@@ -3,7 +3,7 @@
 using System;
 using System.Diagnostics;
 
-namespace Grabacr07.ExpeditionWindow
+namespace Grabacr07.KanColleViewer.Plugins.ExpeditionMonitor
 {
     [Conditional("NEVER_USED_AT_RUNTIME")]
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Property, AllowMultiple = false, Inherited = false)]

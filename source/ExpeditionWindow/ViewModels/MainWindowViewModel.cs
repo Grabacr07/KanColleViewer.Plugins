@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Shell;
 using System.Windows.Threading;
-using Grabacr07.ExpeditionWindow.Models;
+using Grabacr07.KanColleViewer.Plugins.ExpeditionMonitor.Models;
 using Grabacr07.KanColleWrapper;
 using MetroTrilithon.Lifetime;
 using MetroTrilithon.Mvvm;
 
-namespace Grabacr07.ExpeditionWindow.ViewModels
+namespace Grabacr07.KanColleViewer.Plugins.ExpeditionMonitor.ViewModels
 {
 	public class MainWindowViewModel : WindowViewModel
 	{

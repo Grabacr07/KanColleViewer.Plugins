@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Grabacr07.ExpeditionWindow.Views
+namespace Grabacr07.KanColleViewer.Plugins.ExpeditionMonitor.Views
 {
     partial class MainWindow
     {

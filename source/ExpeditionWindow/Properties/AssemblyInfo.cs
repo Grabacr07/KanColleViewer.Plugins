@@ -7,14 +7,11 @@ using System.Windows;
 // アセンブリに関する一般情報は以下の属性セットをとおして制御されます。
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
-[assembly: AssemblyTitle("ExpeditionWindow")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ExpeditionWindow")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
+[assembly: AssemblyTitle("ExpeditionMonitor")]
+[assembly: AssemblyDescription("遠征出し忘れが激しいので、専用ウィンドウ作った。")]
+[assembly: AssemblyCompany("grabacr.net")]
+[assembly: AssemblyProduct("KanColleViewer")]
+[assembly: AssemblyCopyright("Copyright © 2015 @Grabacr07")]
 
 // ComVisible を false に設定すると、その型はこのアセンブリ内で COM コンポーネントから
 // 参照不可能になります。COM からこのアセンブリ内の型にアクセスする場合は、
@@ -52,4 +49,3 @@ using System.Windows;
 // 既定値にすることができます:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]

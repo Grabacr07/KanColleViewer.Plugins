@@ -66,9 +66,6 @@ namespace Grabacr07.ExpeditionWindow.ViewModels
 				.Select(a => new ExpeditionViewModel(a.Id, a.Expedition).AddTo(this))
 				.Do(x => x.Subscribe(nameof(ExpeditionViewModel.State), () => this.TimerOnTick(null, null)).AddTo(this))
 				.ToList();
-
-		    foreach (var expedition in this.Expeditions) expedition.Subscribe(nameof(ExpeditionViewModel.State), () => this.TimerOnTick(null, null)).AddTo(this);
-
 		    this.TimerOnTick(null, null);
 		}
 

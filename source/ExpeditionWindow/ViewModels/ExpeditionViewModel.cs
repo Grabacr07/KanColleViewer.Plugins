@@ -66,7 +66,7 @@ namespace Grabacr07.ExpeditionWindow.ViewModels
 				? this.Source.Remaining?.TotalSeconds > 0
 					? ExpeditionState.InExecution
 					: ExpeditionState.Returned
-				: ExpeditionState.Watinig;
+				: ExpeditionState.Waiting;
 		}
 
 

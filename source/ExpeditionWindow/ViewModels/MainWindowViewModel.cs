@@ -80,7 +80,7 @@ namespace Grabacr07.ExpeditionWindow.ViewModels
 				var target = this.Expeditions.Where(x => x.Source.IsInExecution).Aggregate(Early);
 				if (target.Source.Remaining.HasValue && target.Source.ReturnTime.HasValue)
 				{
-					var state = this.Expeditions.Any(x => x.State == ExpeditionState.Watinig)
+					var state = this.Expeditions.Any(x => x.State == ExpeditionState.Waiting)
 						? TaskbarItemProgressState.Paused
 						: TaskbarItemProgressState.Normal;
 					var start = target.Source.ReturnTime.Value.Subtract(TimeSpan.FromMinutes(target.Source.Mission.RawData.api_time)); // 開始時間

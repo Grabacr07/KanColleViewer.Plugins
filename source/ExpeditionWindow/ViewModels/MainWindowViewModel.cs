@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Shell;
 using System.Windows.Threading;
+using Grabacr07.ExpeditionWindow.Models;
 using Grabacr07.KanColleWrapper;
 using MetroTrilithon.Lifetime;
 using MetroTrilithon.Mvvm;
@@ -47,7 +48,7 @@ namespace Grabacr07.ExpeditionWindow.ViewModels
 				.AddTo(this);
 
 			// タスク バーを 1 分おきに更新する
-			var timer = new DispatcherTimer(DispatcherPriority.Normal) { Interval = TimeSpan.FromMilliseconds(60000.0), };
+			var timer = new DispatcherTimer(DispatcherPriority.Normal) { Interval = TimeSpan.FromMilliseconds(MainWindowSettings.TaskbarUpdateInterval), };
 			timer.Tick += this.TimerOnTick;
 			timer.Start();
 		    this.TimerOnTick(null, null); // これはひどぅい
@@ -63,7 +64,11 @@ namespace Grabacr07.ExpeditionWindow.ViewModels
 				.Select(x => new { x.Value.Id, x.Value.Expedition, })
 				.Where(a => a.Expedition != null)
 				.Select(a => new ExpeditionViewModel(a.Id, a.Expedition).AddTo(this))
+				.Do(x => x.Subscribe(nameof(ExpeditionViewModel.State), () => this.TimerOnTick(null, null)).AddTo(this))
 				.ToList();
+
+		    foreach (var expedition in this.Expeditions) expedition.Subscribe(nameof(ExpeditionViewModel.State), () => this.TimerOnTick(null, null)).AddTo(this);
+
 		    this.TimerOnTick(null, null);
 		}
 

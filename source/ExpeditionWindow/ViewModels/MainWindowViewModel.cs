@@ -79,7 +79,7 @@ namespace Grabacr07.KanColleViewer.Plugins.ExpeditionMonitor.ViewModels
 			}
 			else
 			{
-				var target = this.Expeditions.Where(x => x.Source.IsInExecution).Aggregate(Early);
+				var target = this.Expeditions.Aggregate(Early);
 				if (target.Source.Remaining.HasValue && target.Source.ReturnTime.HasValue)
 				{
 					var state = this.Expeditions.Any(x => x.State == ExpeditionState.Waiting)

@@ -4,18 +4,18 @@
 				   xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
 				   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 				   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-				   xmlns:metro="http://schemes.grabacr.net/winfx/2014/controls"
 				   xmlns:livet="http://schemas.livet-mvvm.net/2011/wpf"
+				   xmlns:metro="clr-namespace:MetroRadiance.Controls;assembly=MetroRadiance"
 				   xmlns:mtiv="http://schemes.grabacr.net/winfx/2015/personal/interactivity"
 				   xmlns:kcvc="http://schemes.grabacr.net/winfx/2015/kancolleviewer/controls"
-				   xmlns:models1="clr-namespace:Grabacr07.KanColleViewer.Plugins.ExpeditionMonitor.Models"
-				   xmlns:viewModels1="clr-namespace:Grabacr07.KanColleViewer.Plugins.ExpeditionMonitor.ViewModels"
+				   xmlns:m="clr-namespace:Grabacr07.KanColleViewer.Plugins.ExpeditionMonitor.Models"
+				   xmlns:vm="clr-namespace:Grabacr07.KanColleViewer.Plugins.ExpeditionMonitor.ViewModels"
 				   mc:Ignorable="d"
-				   d:DataContext="{d:DesignInstance viewModels1:MainWindowViewModel}"
+				   d:DataContext="{d:DesignInstance vm:MainWindowViewModel}"
 				   Title="{Binding Title}"
 				   Width="290"
 				   Height="290"
-				   Topmost="{Binding Source={x:Static models1:MainWindowSettings.TopMost}, Path=Value, Mode=TwoWay}"
+				   Topmost="{Binding Source={x:Static m:MainWindowSettings.TopMost}, Path=Value, Mode=TwoWay}"
 				   Background="{DynamicResource ThemeBrushKey}"
 				   Foreground="{DynamicResource ActiveForegroundBrushKey}"
 				   IsRestoringWindowPlacement="True"
@@ -60,9 +60,7 @@
 
 	<DockPanel>
 		<!-- #region Caption area -->
-		<DockPanel x:Name="captionBar"
-				   x:FieldModifier="private"
-				   DockPanel.Dock="Top"
+		<DockPanel DockPanel.Dock="Top"
 				   metro:MetroWindow.IsCaptionBar="True">
 			<Border DockPanel.Dock="Bottom"
 					Height="4" />
@@ -77,7 +75,7 @@
 						HorizontalAlignment="Right"
 						VerticalAlignment="Top"
 						WindowChrome.IsHitTestVisibleInChrome="True">
-				<metro:CaptionButton IsChecked="{Binding Source={x:Static models1:MainWindowSettings.TopMost}, Path=Value, Mode=TwoWay}"
+				<metro:CaptionButton IsChecked="{Binding Source={x:Static m:MainWindowSettings.TopMost}, Path=Value, Mode=TwoWay}"
 									 Style="{DynamicResource PinButtonStyleKey}" />
 				<metro:SystemButtons />
 			</StackPanel>

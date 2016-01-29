@@ -10,7 +10,7 @@ namespace Grabacr07.KanColleViewer.Plugins.ExpeditionMonitor.ViewModels
 {
 	public class ExpeditionViewModel : IDisposableHolder, INotifyPropertyChanged
 	{
-		private readonly CompositeDisposable compositeDisposable = new CompositeDisposable();
+		private readonly MultipleDisposable compositeDisposable = new MultipleDisposable();
 
 		public Expedition Source { get; }
 
